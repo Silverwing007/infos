@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<title>
+
+</title>
+
+ <style>
+
+body{background-image:url(images/front.png);
+      background-size:100%;
+       background-repeat:no-repeat;
+      }
+
+#button{ background-color:yellow;
+
+    color: blue;
+     padding: 10px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    position:absolute;
+    top:150px;
+    left:770px;
+    cursor: pointer;
+      z-index:2;
+    }
+
+#text{ position:absolute;
+        top:150px;
+        left:450px;
+        font-size:25px;
+        width:300px;
+         height:300px;
+        text-shadow:1px 1px grey;
+        z-index:4;
+        color:yellow;
+         }
+
+
+
+#startgame{
+
+    visibility:hidden;
+    font-size: 20px;
+    position:absolute;
+    top:430px;
+    left:450px;
+  z-index:5;
+    }
+
+
+
+
+
+
+</style>
+
+
+<script>
+var text =  "You are standing at the crossroads. Wanna know what is going on in the future? Do the time travel!";
+var i = 0;
+
+
+function typeWriter() {
+  if (i < text.length) {
+    document.getElementById("text").innerHTML += text.charAt(i);
+
+    i++;
+
+    setTimeout(typeWriter, 30);
+  }
+else{ document.getElementById("startgame").style.visibility = "visible";}
+
+}
+
+
+
+</script>
+</head>
+<body onload="typeWriter()">
+
+
+
+
+<div id="text">  </div>
+
+<a href="2020.html"><button id="button" >Start<button></a>
+
+
+</body>
+</html>
